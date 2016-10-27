@@ -2,7 +2,7 @@
     ViewBag.Title = "PlanetInfo";
 }
 <h2 style="font-size: 80px; padding-top: 40px; color:white;"><b>@ViewBag.PlanetName</b></h2>
-<hr />
+
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
@@ -10,7 +10,6 @@
     <li class="breadcrumb-item active">@ViewBag.PlanetName</li>
 </ol>
 <hr />
-
 <!--Skeleton of Planet Info Sheet-->
 <!--Would be good to include button going back to Planets page-->
 <div class="row">
@@ -40,6 +39,5 @@
     </div>
     <div class="col-md-6">
         <img src="@Url.Content(ViewBag.ImagePath)" class="img-responsive; img-rounded" style="width: 95%; height: auto" />
-        <p><div class="text-center"><button type="button" class="btn btn-secondary" style="text-decoration:none;">@Html.ActionLink("Back to Plants", "Planets", "Home", null, null)</button></div></p>
     </div>
 </div>
