@@ -99,3 +99,8 @@ a:hover {
 .breadcrumb a {
    color: white;
 }
+
+#binksTitle{
+    align-content:center;
+   width: 800px;
+}
