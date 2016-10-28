@@ -104,3 +104,8 @@ a:hover {
     align-content:center;
    width: 800px;
 }
+
+#commentBox{
+    color:white;
+    width:400px;
+}

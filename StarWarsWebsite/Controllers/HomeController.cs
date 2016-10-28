@@ -23,9 +23,8 @@ namespace StarWarsWebsite.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult FAQ()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
