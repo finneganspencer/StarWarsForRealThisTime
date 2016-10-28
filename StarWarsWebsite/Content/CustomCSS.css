@@ -104,3 +104,22 @@ a:hover {
     align-content:center;
    width: 800px;
 }
+
+p {
+    color: white;
+}
+
+h2 {
+    color: white;
+    font-size: 60px;
+    padding-top: 40px;
+    padding-bottom: 10px
+}
+
+.About {
+    color: white;
+}
+
+h4 {
+    font-size: 40px;
+}
