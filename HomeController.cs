@@ -18,7 +18,7 @@ namespace StarWarsWebsite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "The Force is stong with these ones...";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
