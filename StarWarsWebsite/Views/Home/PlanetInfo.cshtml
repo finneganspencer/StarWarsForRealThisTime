@@ -1,7 +1,9 @@
-﻿@{
+﻿@model IEnumerable<StarWarsWebsite.Models.Planet>
+@{
     ViewBag.Title = "PlanetInfo";
+    
 }
-<h2 style="font-size: 80px; padding-top: 40px; color:white;"><b>@ViewBag.PlanetName</b></h2>
+<h2 style="font-size: 80px; padding-top: 40px; color:white;"></h2>
 
 
 <ol class="breadcrumb">
@@ -14,7 +16,192 @@
 <!--Would be good to include button going back to Planets page-->
 <div class="row">
     <div class="col-md-6 pre-scrollable" style="color:white;">
-        <p class="titles"><b>Region</b></p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanetName)
+                </th>
+                @foreach(var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.PlanetName)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Region)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Region)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sector)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Sector)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.System)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.System)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Moons)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Moons)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Class)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Class)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Terrain)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Terrain)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Species)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Species)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrimaryLanguage)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.PrimaryLanguage)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Population)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Population)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CapitalCity)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.CapitalCity)</td>
+                }
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Government)
+                </th>
+                @foreach (var item in Model)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.Government)</td>
+                }
+            </tr>
+            <tr>
+                <th></th>
+            </tr>
+
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlanetName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Region)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sector)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.System)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Moons)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Class)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Terrain)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Species)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimaryLanguage)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Population)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapitalCity)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Government)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PlanetID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PlanetID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PlanetID })
+                    </td>
+                </tr>
+            }*@
+
+        </table>
+        @*<p class="titles"><b>Region</b></p>
         <p class="stats">@ViewBag.Region</p>
         <p class="titles"><b>Sector</b></p>
         <p class="stats">@ViewBag.Sector</p>
@@ -35,7 +222,7 @@
         <p class="titles"><b>Major Cities</b></p>
         <p class="stats">@ViewBag.MajorCities</p>
         <p class="titles"><b>Affiliation</b></p>
-        <p class="stats">@ViewBag.Affiliation</p>
+        <p class="stats">@ViewBag.Affiliation</p>*@
     </div>
     <div class="col-md-6">
         <img src="@Url.Content(ViewBag.ImagePath)" class="img-responsive; img-rounded" style="width: 95%; height: auto" />
