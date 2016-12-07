@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+@*@if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
@@ -19,4 +19,10 @@ else
         <li>@Html.ActionLink("Register", "Register", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-}
+}*@
+
+<ul class="nav navbar-nav navbar-right">
+    <li>@Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+    <li>@Html.ActionLink("Register", "Create", "Users", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</ul>

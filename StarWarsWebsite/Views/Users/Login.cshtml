@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td style="padding: 10px;">
+                Email:
+            </td>
+            <td style="padding: 10px;">
+                @Html.TextBox("Email")
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td style="padding: 10px;">
+                Password:
+            </td>
+            <td style="padding: 10px;">
+                @Html.Password("Password")
+            </td>
+        </tr>
+    </table>
+    <br />
+    <input type="submit" value="Sign In">
+    <br />
+    <div class="row">&nbsp</div>
+    <p>
+        @Html.ActionLink("Register as a new user", "Create", "Users")
+    </p>
+
+}
