@@ -12,7 +12,7 @@ namespace StarWarsWebsite.Models
     {
         [Key]
         public int QuestionID { get; set; }
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public string question { get; set; }
         public string answer { get; set; }
     }
