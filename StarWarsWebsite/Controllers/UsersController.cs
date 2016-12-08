@@ -94,7 +94,7 @@ namespace StarWarsWebsite.Controllers
             {
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(user);
         }
@@ -160,6 +160,14 @@ namespace StarWarsWebsite.Controllers
             }
 
             return View();
+        }
+        public ActionResult Logout()
+        {
+            StarWarsWebsite.Controllers.GlobalVariables.currentUser = "New User";
+            StarWarsWebsite.Controllers.GlobalVariables.currentUserName = "New User";
+            StarWarsWebsite.Controllers.GlobalVariables.currentUserID = 0;
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

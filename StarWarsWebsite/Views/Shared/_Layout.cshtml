@@ -30,18 +30,14 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Planets", "Planets", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>
-                        @if (StarWarsWebsite.Controllers.GlobalVariables.currentUserID != 0)
-                        {
-                            @Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Edit", "Users", new { id = SchoolFun.Controllers.GlobalVariables.currentUserID }, htmlAttributes: new { title = "Manage" })
-                        }
-
-                        else
-                        {
-                            @Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Index", "Home", null, htmlAttributes: new { title = "Manage" })
-                        }
-
-                    </li>
+                    @if (StarWarsWebsite.Controllers.GlobalVariables.currentUserName != "New User")
+                    {
+                        <li>@Html.ActionLink("FAQ", "Index", "Questions")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("FAQ", "Create", "Users")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

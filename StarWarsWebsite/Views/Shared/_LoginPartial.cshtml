@@ -22,7 +22,26 @@ else
 }*@
 
 <ul class="nav navbar-nav navbar-right">
-    <li>@Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+    @*<li>@Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })</li>*@
+    <li>
+        @if (StarWarsWebsite.Controllers.GlobalVariables.currentUserID != 0)
+        {
+            @Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Edit", "Users", new { id = StarWarsWebsite.Controllers.GlobalVariables.currentUserID }, htmlAttributes: new { title = "Manage" })
+        }
+
+        else
+        {
+            @Html.ActionLink("Hello " + StarWarsWebsite.Controllers.GlobalVariables.currentUserName + "!", "Index", "Home", null, htmlAttributes: new { title = "Manage" })
+        }
+
+    </li>
     <li>@Html.ActionLink("Register", "Create", "Users", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("Log in", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    @if (StarWarsWebsite.Controllers.GlobalVariables.currentUserName != "New User")
+    {
+        <li>@Html.ActionLink("Log Out", "Logout", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Log in", "Login", "Users", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
 </ul>
